@@ -1,4 +1,6 @@
-Prototipo de Minijuego de Ruleta de preguntas al azar
+MINIJUEGO | RULETA DE PREGUNTAS
+
+Descripcion: Prototipo de Minijuego de Ruleta de preguntas al azar
 
 Tecnologias Usadas:
 
