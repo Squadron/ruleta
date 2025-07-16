@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruleta de Preguntas</title>
+    <script src="js/tailwind4.js"></script>
+    <style>
+      /* Para centrar los números en los sectores */
+      .ruleta-num {
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <div class="w-full max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
+        <!-- Ruleta y botón -->
+        <div class="flex flex-col items-center">
+            <div class="relative">
+                <!-- SVG Ruleta -->
+                <svg id="ruleta" width="260" height="260" viewBox="0 0 260 260" class="rounded-full shadow-lg transition-transform duration-1000 bg-white">
+                    <!-- Los sectores y números se dibujan por JS -->
+                </svg>
+                <!-- Flecha indicadora -->
+                <div class="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-10 rotate-180">
+                    <div class="w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-red-500"></div>
+                </div>
+            </div>
+            <button id="girar-btn" class="mt-6 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Girar Ruleta</button>
+        </div>
+        <!-- Lista de preguntas -->
+        <div class="bg-white rounded shadow p-4 w-full md:w-80">
+            <h2 class="text-lg font-bold mb-2 text-blue-700">Preguntas</h2>
+            <ol id="lista-preguntas" class="list-decimal list-inside space-y-2 text-gray-800">
+                <!-- Se llena por JS -->
+            </ol>
+        </div>
+    </div>
+
+    <!-- Pregunta y respuestas -->
+    <div id="pregunta-container" class="hidden bg-white p-6 rounded shadow flex flex-col gap-4 mt-8 max-w-md mx-auto">
+        <div id="pregunta" class="text-lg font-semibold"></div>
+        <div id="respuestas" class="flex flex-col gap-2"></div>
+    </div>
+
+    <!-- Mensaje de resultado -->
+    <div id="resultado" class="hidden mt-6 text-center text-xl font-bold"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

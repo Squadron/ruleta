@@ -1,0 +1,92 @@
+[
+  {
+    "pregunta": "¿Cuál es la capital de España?",
+    "respuestas": [
+      "Madrid",
+      "Barcelona",
+      "Valencia"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuántos continentes hay en el mundo?",
+    "respuestas": [
+      "5",
+      "6",
+      "7"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Quién pintó la Mona Lisa?",
+    "respuestas": [
+      "Leonardo da Vinci",
+      "Pablo Picasso",
+      "Vincent van Gogh"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el río más largo del mundo?",
+    "respuestas": [
+      "Nilo",
+      "Amazonas",
+      "Yangtsé"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿En qué año llegó el hombre a la Luna?",
+    "respuestas": [
+      "1965",
+      "1969",
+      "1972"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Cuál es el elemento químico con símbolo O?",
+    "respuestas": [
+      "Oro",
+      "Oxígeno",
+      "Osmio"
+    ],
+    "correcta": 1
+  },
+  {
+    "pregunta": "¿Quién escribió 'Cien años de soledad'?",
+    "respuestas": [
+      "Gabriel García Márquez",
+      "Mario Vargas Llosa",
+      "Julio Cortázar"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuál es el país más grande del mundo?",
+    "respuestas": [
+      "Estados Unidos",
+      "China",
+      "Rusia"
+    ],
+    "correcta": 2
+  },
+  {
+    "pregunta": "¿Qué planeta es conocido como el planeta rojo?",
+    "respuestas": [
+      "Marte",
+      "Júpiter",
+      "Venus"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cuántos lados tiene un hexágono?",
+    "respuestas": [
+      "Cinco",
+      "Seis",
+      "Siete"
+    ],
+    "correcta": 1
+  }
+]
