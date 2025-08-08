@@ -2,6 +2,18 @@ let preguntas = [];
 let preguntaActual = null;
 let seleccionActual = null;
 
+if (window.RULETA_CONFIG && window.RULETA_CONFIG.fondo) {
+    document.body.classList.remove("bg-gray-100"); // Quita el valor por defecto si existe
+    document.body.classList.add(window.RULETA_CONFIG.fondo);
+}
+
+if (window.RULETA_CONFIG && typeof window.RULETA_CONFIG.mostrarPreguntas === "boolean") {
+	const listaPreguntasDiv = document.querySelector('.bg-white.rounded.shadow.p-4.w-full.md\\:w-80');
+	if (listaPreguntasDiv) {
+		listaPreguntasDiv.style.display = window.RULETA_CONFIG.mostrarPreguntas ? "block" : "none";
+	}
+}
+
 const ruleta = document.getElementById('ruleta');
 const girarBtn = document.getElementById('girar-btn');
 const preguntaContainer = document.getElementById('pregunta-container');
