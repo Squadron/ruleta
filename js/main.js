@@ -194,18 +194,8 @@ function validarRespuesta(idx) {
   const esCorrecta = idx === preguntaActual.correcta;
   mostrarVistaResultado(esCorrecta);
 
-  // Muestra el mensaje en la vista 3
-  if (esCorrecta) {
-    resultadoDiv.textContent = '¡Correcto! 🎉';
-    resultadoDiv.className = 'mt-6 text-center text-6xl font-bold text-green-600';
-  } else {
-    resultadoDiv.textContent = 'Incorrecto 😢';
-    resultadoDiv.className = 'mt-6 text-center text-6xl font-bold text-red-600';
-  }
-
-  // Espera 2 segundos antes de volver a la ruleta
   setTimeout(() => {
-    resultadoDiv.textContent = '';
+    // Limpia y regresa a la ruleta
     ruleta.style.transition = '';
     ruleta.style.transform = '';
     ruletaContainer.classList.remove('opacity-30', 'pointer-events-none');
@@ -252,7 +242,8 @@ function mostrarVistaResultado(correcta) {
   img.style.display = "block";
   img.style.margin = "auto";
 
-  // Quita cualquier fondo de imagen anterior
+  // Quita cualquier fondo de imagen anterior y clases de fondo
   document.body.className = "min-h-screen flex flex-col items-center justify-center";
   document.body.style.backgroundImage = "none";
+  // NO borres el contenido del resultadoDiv (no borres el <img>)
 }
