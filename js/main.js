@@ -87,7 +87,7 @@ function dibujarRuleta() {
     let deg = angle * 180 / Math.PI + 90;
 
     // Calcula el tamaño de fuente proporcional al radio
-    const fontSize = Math.max(radio * 0.16, 18); // mínimo 18px para que siempre sea legible
+    const fontSize = Math.max(radio * 0.17, 18); // mínimo 18px para que siempre sea legible
 
     svg += `<text x="${numX}" y="${numY}" class="ruleta-num" fill="#222" font-size="${fontSize}" transform="rotate(${deg} ${numX} ${numY})">${i + 1}</text>`;
   }
@@ -96,6 +96,24 @@ function dibujarRuleta() {
   ruleta.setAttribute('height', ruletaSize);
   ruleta.setAttribute('viewBox', `0 0 ${ruletaSize} ${ruletaSize}`);
   ruleta.innerHTML = svg;
+
+  ajustarFlecha(ruletaSize);
+}
+
+function ajustarFlecha(ruletaSize) {
+  const flecha = document.getElementById('flecha-indicadora');
+  const base = Math.max(ruletaSize * 0.04, 16); // base de la flecha
+  const altura = Math.max(ruletaSize * 0.08, 32); // altura de la flecha
+
+  flecha.innerHTML = `
+    <div style="
+      width: 0;
+      height: 0;
+      border-left: ${base}px solid transparent;
+      border-right: ${base}px solid transparent;
+      border-bottom: ${altura}px solid #ef4444;
+    "></div>
+  `;
 }
 
 // Redibuja la ruleta al cambiar el tamaño de la ventana

@@ -8,7 +8,6 @@
     <style>
       /* Para centrar los números en los sectores */
       .ruleta-num {
-        font-size: 1.25rem;
         font-weight: bold;
         text-anchor: middle;
         dominant-baseline: middle;
@@ -23,9 +22,7 @@
                 <!-- SVG Ruleta -->
                 <svg id="ruleta" class="rounded-full shadow-lg transition-transform duration-1000 bg-white w-full h-auto" style="display:block;"></svg>
                 <!-- Flecha indicadora -->
-                <div class="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-10 rotate-180">
-                    <div class="w-0 h-0 border-l-8 border-r-8 border-b-16 border-l-transparent border-r-transparent border-b-red-500"></div>
-                </div>
+                <div id="flecha-indicadora" class="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 z-10 rotate-180"></div>
             </div>
             <button id="girar-btn" class="mt-6 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Girar Ruleta</button>
         </div>
