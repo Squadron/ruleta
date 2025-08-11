@@ -19,7 +19,7 @@ const girarBtn = document.getElementById('girar-btn');
 const preguntaContainer = document.getElementById('pregunta-container');
 const preguntaDiv = document.getElementById('pregunta');
 const respuestasDiv = document.getElementById('respuestas');
-const resultadoDiv = document.getElementById('resultado');
+const resultadoDiv = document.getElementById('vista-resultado');
 const listaPreguntas = document.getElementById('lista-preguntas');
 const ruletaContainer = document.querySelector('.relative').parentElement; // div.flex.flex-col.items-center
 
@@ -160,8 +160,8 @@ girarBtn.addEventListener('click', () => {
 });
 
 function mostrarPregunta(idx) {
+  mostrarVistaPregunta();
   preguntaActual = preguntas[idx];
-  preguntaContainer.classList.remove('hidden');
   resultadoDiv.classList.add('hidden');
   preguntaDiv.textContent = preguntaActual.pregunta;
   respuestasDiv.innerHTML = '';
@@ -169,7 +169,7 @@ function mostrarPregunta(idx) {
   preguntaActual.respuestas.forEach((resp, i) => {
     const btn = document.createElement('button');
     btn.textContent = resp;
-    btn.className = 'px-4 py-2 bg-gray-200 rounded hover:bg-blue-200 transition text-left';
+    btn.className = 'w-full text-4xl px-8 py-8 my-4 bg-gray-200 rounded-lg hover:bg-blue-200 transition font-bold text-center shadow-lg';
     btn.onclick = () => validarRespuesta(i);
     respuestasDiv.appendChild(btn);
   });
@@ -179,7 +179,6 @@ function mostrarPregunta(idx) {
 }
 
 function validarRespuesta(idx) {
-  preguntaContainer.classList.add('hidden');
   resultadoDiv.classList.remove('hidden');
   if (idx === preguntaActual.correcta) {
     resultadoDiv.textContent = '¡Correcto! 🎉';
@@ -196,5 +195,29 @@ function validarRespuesta(idx) {
     ruleta.style.transform = '';
     ruletaContainer.classList.remove('opacity-30', 'pointer-events-none');
     girarBtn.disabled = false;
+    mostrarVistaRuleta(); // <-- Regresa a la vista de la ruleta
   }, 2000);
+}
+
+function mostrarVistaRuleta() {
+  document.getElementById('vista-ruleta').classList.remove('hidden');
+  document.getElementById('vista-pregunta').classList.add('hidden');
+  document.getElementById('vista-resultado').classList.add('hidden');
+  document.body.className = "min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('/img/FONDO_RULETA_KYNDRYL_01.jpg')]";
+}
+
+function mostrarVistaPregunta() {
+  document.getElementById('vista-ruleta').classList.add('hidden');
+  document.getElementById('vista-pregunta').classList.remove('hidden');
+  document.getElementById('vista-resultado').classList.add('hidden');
+  document.body.className = "min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('/img/FONDO_RULETA_KYNDRYL_02.jpg')]";
+}
+
+function mostrarVistaResultado(correcta) {
+  document.getElementById('vista-ruleta').classList.add('hidden');
+  document.getElementById('vista-pregunta').classList.add('hidden');
+  document.getElementById('vista-resultado').classList.remove('hidden');
+  // Fondo blanco o el que prefieras
+  document.body.className = "min-h-screen flex flex-col items-center justify-center bg-white";
+  // Aquí puedes mostrar una imagen según correcta o incorrecta
 }

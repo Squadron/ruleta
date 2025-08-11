@@ -18,8 +18,9 @@
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('/img/FONDO_RULETA_KYNDRYL_01.jpg')]">
-    <div class="w-full flex flex-col md:flex-row items-center justify-center gap-8">
+<body id="main-body" class="min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('/img/FONDO_RULETA_KYNDRYL_01.jpg')]">
+  <!-- Vista 1: Ruleta -->
+  <div id="vista-ruleta" class="w-full flex flex-col md:flex-row items-center justify-center gap-8">
         <!-- Ruleta y botón -->
         <div class="flex flex-col items-center">
             <div class="relative w-full flex justify-center">
@@ -39,14 +40,14 @@
         </div>
     </div>
 
-    <!-- Pregunta y respuestas -->
-    <div id="pregunta-container" class="hidden bg-white p-6 rounded shadow flex flex-col gap-4 mt-8 max-w-md mx-auto">
-        <div id="pregunta" class="text-lg font-semibold"></div>
-        <div id="respuestas" class="flex flex-col gap-2"></div>
+    <!-- Vista 2: Pregunta -->
+    <div id="vista-pregunta" class="hidden flex flex-col items-center justify-center min-h-screen w-full px-8">
+        <div id="pregunta" class="text-5xl font-bold text-center mb-12"></div>
+        <div id="respuestas" class="flex flex-col gap-8 w-full max-w-3xl"></div>
     </div>
 
-    <!-- Mensaje de resultado -->
-    <div id="resultado" class="hidden mt-6 text-center text-xl font-bold"></div>
+    <!-- Vista 3: Resultado -->
+    <div id="vista-resultado" class="hidden mt-6 text-center text-xl font-bold"></div>
 
     <script src="js/config.js"></script>
     <script src="js/main.js"></script>
