@@ -55,10 +55,18 @@ function llenarListaPreguntas() {
   });
 }
 
+function getRuletaSize() {
+  // Usa el porcentaje de config.js o 0.9 por defecto
+  const porcentaje = window.RULETA_CONFIG?.ruletaPorcentaje || 0.9;
+  // Calcula el tamaño según el ancho visible (viewport)
+  return Math.floor(window.innerWidth * porcentaje);
+}
+
 function dibujarRuleta() {
   const n = preguntas.length;
-  const radio = 130;
-  const cx = 130, cy = 130;
+  const ruletaSize = getRuletaSize();
+  const radio = ruletaSize / 2;
+  const cx = ruletaSize / 2, cy = ruletaSize / 2;
   let svg = '';
 
   for (let i = 0; i < n; i++) {
@@ -69,24 +77,31 @@ function dibujarRuleta() {
     const x2 = cx + radio * Math.cos(endAngle);
     const y2 = cy + radio * Math.sin(endAngle);
 
-    // Sector
     const largeArc = (2 * Math.PI / n) > Math.PI ? 1 : 0;
     svg += `<path d="M${cx},${cy} L${x1},${y1} A${radio},${radio} 0 ${largeArc},1 ${x2},${y2} Z" fill="${colores[i % colores.length]}" />`;
 
-    // Número alineado radialmente (sin invertir en la mitad inferior)
     const angle = (startAngle + endAngle) / 2;
     const numRadius = radio * 0.7;
     const numX = cx + numRadius * Math.cos(angle);
     const numY = cy + numRadius * Math.sin(angle);
-
-    // Siempre +90 para que la base apunte al centro
     let deg = angle * 180 / Math.PI + 90;
 
-    svg += `<text x="${numX}" y="${numY}" class="ruleta-num" fill="#222" transform="rotate(${deg} ${numX} ${numY})">${i + 1}</text>`;
+    // Calcula el tamaño de fuente proporcional al radio
+    const fontSize = Math.max(radio * 0.16, 18); // mínimo 18px para que siempre sea legible
+
+    svg += `<text x="${numX}" y="${numY}" class="ruleta-num" fill="#222" font-size="${fontSize}" transform="rotate(${deg} ${numX} ${numY})">${i + 1}</text>`;
   }
 
+  ruleta.setAttribute('width', ruletaSize);
+  ruleta.setAttribute('height', ruletaSize);
+  ruleta.setAttribute('viewBox', `0 0 ${ruletaSize} ${ruletaSize}`);
   ruleta.innerHTML = svg;
 }
+
+// Redibuja la ruleta al cambiar el tamaño de la ventana
+window.addEventListener('resize', () => {
+  if (preguntas.length > 0) dibujarRuleta();
+});
 
 girarBtn.addEventListener('click', () => {
   if (preguntas.length === 0) return;
