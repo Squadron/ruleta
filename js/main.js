@@ -176,13 +176,15 @@ function mostrarPregunta(idx) {
   const fontSize = Math.max(window.innerWidth * 0.07, 64); // 7% del ancho, mínimo 64px
   preguntaDiv.style.color = "#fff";
   preguntaDiv.style.fontSize = fontSize + "px";
-  preguntaDiv.style.textShadow = "2px 2px 8px #000"; // Opcional: sombra para mejor contraste
+  preguntaDiv.style.textShadow = "2px 2px 8px #000";
+  preguntaDiv.className = "text-5xl font-bold text-center mb-20"; // Aumenta el margen inferior
+
+  respuestasDiv.className = "flex flex-col gap-12 w-full max-w-3xl"; // Aumenta el gap
 
   preguntaActual.respuestas.forEach((resp, i) => {
     const btn = document.createElement('button');
     btn.textContent = resp;
-    // Opciones: texto negro, fondo blanco, borde redondeado, fuente grande y padding generoso
-    btn.className = 'w-full text-black bg-white rounded-3xl border-4 border-gray-300 text-6xl px-12 py-12 my-8 font-bold text-center shadow-xl hover:bg-blue-100 transition';
+    btn.className = 'w-full text-black bg-white rounded-3xl border-4 border-gray-300 text-6xl px-12 py-12 font-bold text-center shadow-xl hover:bg-blue-100 transition';
     btn.onclick = () => validarRespuesta(i);
     respuestasDiv.appendChild(btn);
   });
@@ -212,6 +214,8 @@ function mostrarVistaRuleta() {
   document.body.style.backgroundColor = "";
   document.body.style.backgroundImage = "";
   document.getElementById('img-resultado').style.display = "none";
+  document.getElementById('logo-vista-ruleta').classList.remove('hidden');
+  document.getElementById('logo-vista-pregunta').classList.add('hidden');
 }
 
 function mostrarVistaPregunta() {
@@ -222,9 +226,11 @@ function mostrarVistaPregunta() {
   document.body.style.backgroundColor = "";
   document.body.style.backgroundImage = "";
   document.getElementById('img-resultado').style.display = "none";
+  document.getElementById('logo-vista-ruleta').classList.add('hidden');
+  document.getElementById('logo-vista-pregunta').classList.remove('hidden');
 }
 
-function mostrarVistaResultado(correcta) {
+function mostrarVistaResultado(esCorrecta) {
   document.getElementById('vista-ruleta').classList.add('hidden');
   document.getElementById('vista-pregunta').classList.add('hidden');
   const vistaResultado = document.getElementById('vista-resultado');
@@ -232,7 +238,7 @@ function mostrarVistaResultado(correcta) {
 
   // Selecciona la imagen y el color de fondo según el resultado
   const img = document.getElementById('img-resultado');
-  if (correcta) {
+  if (esCorrecta) {
     img.src = "img/FONDO_RULETA_KYNDRYL_04_B.jpg";
     document.body.style.backgroundColor = "#ffffff";
   } else {
@@ -245,5 +251,4 @@ function mostrarVistaResultado(correcta) {
   // Quita cualquier fondo de imagen anterior y clases de fondo
   document.body.className = "min-h-screen flex flex-col items-center justify-center";
   document.body.style.backgroundImage = "none";
-  // NO borres el contenido del resultadoDiv (no borres el <img>)
 }
