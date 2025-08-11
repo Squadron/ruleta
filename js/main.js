@@ -44,6 +44,7 @@ fetch('src/preguntas.json')
     preguntas = data;
     dibujarRuleta();
     llenarListaPreguntas();
+    ajustarBoton();
   });
 
 function llenarListaPreguntas() {
@@ -116,9 +117,23 @@ function ajustarFlecha(ruletaSize) {
   `;
 }
 
-// Redibuja la ruleta al cambiar el tamaño de la ventana
+function ajustarBoton() {
+  const porcentaje = window.RULETA_CONFIG?.botonPorcentaje || 0.3;
+  const ancho = Math.floor(window.innerWidth * porcentaje);
+  girarBtn.style.width = ancho + "px";
+  // Tamaño de fuente proporcional al ancho del botón
+  girarBtn.style.fontSize = Math.max(ancho * 0.08, 28) + "px";
+  girarBtn.style.padding = Math.max(ancho * 0.04, 24) + "px 0";
+  // Separación proporcional entre ruleta y botón
+  girarBtn.style.marginTop = Math.max(ancho * 0.12, 40) + "px";
+}
+
+// Redibuja la ruleta y ajusta el botón al cambiar el tamaño de la ventana
 window.addEventListener('resize', () => {
-  if (preguntas.length > 0) dibujarRuleta();
+  if (preguntas.length > 0) {
+    dibujarRuleta();
+    ajustarBoton();
+  }
 });
 
 girarBtn.addEventListener('click', () => {
