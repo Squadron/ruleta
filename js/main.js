@@ -251,4 +251,8 @@ function mostrarVistaResultado(esCorrecta) {
   // Quita cualquier fondo de imagen anterior y clases de fondo
   document.body.className = "min-h-screen flex flex-col items-center justify-center";
   document.body.style.backgroundImage = "none";
+
+  // OCULTA LOS LOGOS EN LA VISTA 3
+  document.getElementById('logo-vista-ruleta').classList.add('hidden');
+  document.getElementById('logo-vista-pregunta').classList.add('hidden');
 }
