@@ -191,23 +191,26 @@ function mostrarPregunta(idx) {
 }
 
 function validarRespuesta(idx) {
-  resultadoDiv.classList.remove('hidden');
-  if (idx === preguntaActual.correcta) {
+  const esCorrecta = idx === preguntaActual.correcta;
+  mostrarVistaResultado(esCorrecta);
+
+  // Muestra el mensaje en la vista 3
+  if (esCorrecta) {
     resultadoDiv.textContent = '¡Correcto! 🎉';
-    resultadoDiv.className = 'mt-6 text-center text-xl font-bold text-green-600';
+    resultadoDiv.className = 'mt-6 text-center text-6xl font-bold text-green-600';
   } else {
     resultadoDiv.textContent = 'Incorrecto 😢';
-    resultadoDiv.className = 'mt-6 text-center text-xl font-bold text-red-600';
+    resultadoDiv.className = 'mt-6 text-center text-6xl font-bold text-red-600';
   }
 
-  // Reiniciar después de 2 segundos
+  // Espera 2 segundos antes de volver a la ruleta
   setTimeout(() => {
-    resultadoDiv.classList.add('hidden');
+    resultadoDiv.textContent = '';
     ruleta.style.transition = '';
     ruleta.style.transform = '';
     ruletaContainer.classList.remove('opacity-30', 'pointer-events-none');
     girarBtn.disabled = false;
-    mostrarVistaRuleta(); // <-- Regresa a la vista de la ruleta
+    mostrarVistaRuleta();
   }, 2000);
 }
 
