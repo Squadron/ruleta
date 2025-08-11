@@ -25,16 +25,16 @@ const ruletaContainer = document.querySelector('.relative').parentElement; // di
 
 // Colores intercalados para los sectores
 const colores = [
-  "#fbbf24", // amarillo
-  "#60a5fa", // azul
-  "#f87171", // rojo
-  "#34d399", // verde
-  "#a78bfa", // violeta
-  "#f472b6", // rosa
-  "#facc15", // dorado
-  "#38bdf8", // celeste
-  "#fb7185", // rosado fuerte
-  "#4ade80"  // verde claro
+  "#ff462d", // warm red
+  "#3d3c3c", // dark stone
+  "#4cdd84", // spring green
+  "#29707a", // spruce
+  "#9e9287", // earth
+  "#ff462d", // warm red
+  "#3d3c3c", // dark stone
+  "#4cdd84", // spring green
+  "#29707a", // spruce
+  "#9e9287"  // earth
 ];
 
 // Cargar preguntas y dibujar ruleta/lista
@@ -112,7 +112,7 @@ function ajustarFlecha(ruletaSize) {
       height: 0;
       border-left: ${base}px solid transparent;
       border-right: ${base}px solid transparent;
-      border-bottom: ${altura}px solid #ef4444;
+      border-bottom: ${altura}px solid #042315;
     "></div>
   `;
 }
