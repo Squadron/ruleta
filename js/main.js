@@ -161,20 +161,32 @@ girarBtn.addEventListener('click', () => {
 
 function mostrarPregunta(idx) {
   mostrarVistaPregunta();
+  // Padding lateral dinámico (10% del ancho)
+  const vistaPregunta = document.getElementById('vista-pregunta');
+  const padding = Math.floor(window.innerWidth * 0.10); // 10% de cada lado
+  vistaPregunta.style.paddingLeft = padding + "px";
+  vistaPregunta.style.paddingRight = padding + "px";
+
   preguntaActual = preguntas[idx];
   resultadoDiv.classList.add('hidden');
   preguntaDiv.textContent = preguntaActual.pregunta;
   respuestasDiv.innerHTML = '';
 
+  // Ajusta el tamaño de fuente de la pregunta según el ancho de pantalla
+  const fontSize = Math.max(window.innerWidth * 0.07, 64); // 7% del ancho, mínimo 64px
+  preguntaDiv.style.color = "#fff";
+  preguntaDiv.style.fontSize = fontSize + "px";
+  preguntaDiv.style.textShadow = "2px 2px 8px #000"; // Opcional: sombra para mejor contraste
+
   preguntaActual.respuestas.forEach((resp, i) => {
     const btn = document.createElement('button');
     btn.textContent = resp;
-    btn.className = 'w-full text-4xl px-8 py-8 my-4 bg-gray-200 rounded-lg hover:bg-blue-200 transition font-bold text-center shadow-lg';
+    // Opciones: texto negro, fondo blanco, borde redondeado, fuente grande y padding generoso
+    btn.className = 'w-full text-black bg-white rounded-3xl border-4 border-gray-300 text-6xl px-12 py-12 my-8 font-bold text-center shadow-xl hover:bg-blue-100 transition';
     btn.onclick = () => validarRespuesta(i);
     respuestasDiv.appendChild(btn);
   });
 
-  // Oculta la ruleta y el botón mientras responde
   ruletaContainer.classList.add('opacity-30', 'pointer-events-none');
 }
 
