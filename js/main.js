@@ -219,6 +219,9 @@ function mostrarVistaRuleta() {
   document.getElementById('vista-pregunta').classList.add('hidden');
   document.getElementById('vista-resultado').classList.add('hidden');
   document.body.className = "min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('/img/FONDO_RULETA_KYNDRYL_01.jpg')]";
+  document.body.style.backgroundColor = "";
+  document.body.style.backgroundImage = "";
+  document.getElementById('img-resultado').style.display = "none";
 }
 
 function mostrarVistaPregunta() {
@@ -226,13 +229,30 @@ function mostrarVistaPregunta() {
   document.getElementById('vista-pregunta').classList.remove('hidden');
   document.getElementById('vista-resultado').classList.add('hidden');
   document.body.className = "min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('/img/FONDO_RULETA_KYNDRYL_02.jpg')]";
+  document.body.style.backgroundColor = "";
+  document.body.style.backgroundImage = "";
+  document.getElementById('img-resultado').style.display = "none";
 }
 
 function mostrarVistaResultado(correcta) {
   document.getElementById('vista-ruleta').classList.add('hidden');
   document.getElementById('vista-pregunta').classList.add('hidden');
-  document.getElementById('vista-resultado').classList.remove('hidden');
-  // Fondo blanco o el que prefieras
-  document.body.className = "min-h-screen flex flex-col items-center justify-center bg-white";
-  // Aquí puedes mostrar una imagen según correcta o incorrecta
+  const vistaResultado = document.getElementById('vista-resultado');
+  vistaResultado.classList.remove('hidden');
+
+  // Selecciona la imagen y el color de fondo según el resultado
+  const img = document.getElementById('img-resultado');
+  if (correcta) {
+    img.src = "img/FONDO_RULETA_KYNDRYL_04_B.jpg";
+    document.body.style.backgroundColor = "#ffffff";
+  } else {
+    img.src = "img/FONDO_RULETA_KYNDRYL_03_B.jpg";
+    document.body.style.backgroundColor = "#3B393A";
+  }
+  img.style.display = "block";
+  img.style.margin = "auto";
+
+  // Quita cualquier fondo de imagen anterior
+  document.body.className = "min-h-screen flex flex-col items-center justify-center";
+  document.body.style.backgroundImage = "none";
 }
