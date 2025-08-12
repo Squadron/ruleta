@@ -210,7 +210,7 @@ function mostrarVistaRuleta() {
   document.getElementById('vista-ruleta').classList.remove('hidden');
   document.getElementById('vista-pregunta').classList.add('hidden');
   document.getElementById('vista-resultado').classList.add('hidden');
-  document.body.className = "min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('/img/FONDO_RULETA_KYNDRYL_01.jpg')]";
+  document.body.className = "min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('img/FONDO_RULETA_KYNDRYL_01.jpg')]";
   document.body.style.backgroundColor = "";
   document.body.style.backgroundImage = "";
   document.getElementById('img-resultado').style.display = "none";
@@ -222,7 +222,7 @@ function mostrarVistaPregunta() {
   document.getElementById('vista-ruleta').classList.add('hidden');
   document.getElementById('vista-pregunta').classList.remove('hidden');
   document.getElementById('vista-resultado').classList.add('hidden');
-  document.body.className = "min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('/img/FONDO_RULETA_KYNDRYL_02.jpg')]";
+  document.body.className = "min-h-screen flex flex-col items-center justify-center bg-repeat-x bg-top bg-[url('img/FONDO_RULETA_KYNDRYL_02.jpg')]";
   document.body.style.backgroundColor = "";
   document.body.style.backgroundImage = "";
   document.getElementById('img-resultado').style.display = "none";
