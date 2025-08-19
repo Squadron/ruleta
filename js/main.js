@@ -90,7 +90,7 @@ function dibujarRuleta() {
     // Calcula el tamaño de fuente proporcional al radio
     const fontSize = Math.max(radio * 0.17, 18); // mínimo 18px para que siempre sea legible
 
-    svg += `<text x="${numX}" y="${numY}" class="ruleta-num" fill="#222" font-size="${fontSize}" transform="rotate(${deg} ${numX} ${numY})">${i + 1}</text>`;
+    svg += `<text x="${numX}" y="${numY}" class="ruleta-num" fill="#fff" font-size="${fontSize}" transform="rotate(${deg} ${numX} ${numY})">${i + 1}</text>`;
   }
 
   ruleta.setAttribute('width', ruletaSize);

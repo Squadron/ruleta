@@ -1,92 +1,92 @@
 [
   {
-    "pregunta": "¿Cuál es la capital de España?",
+    "pregunta": "¿En cuántos países tiene presencia Kyndryl?",
     "respuestas": [
-      "Madrid",
-      "Barcelona",
-      "Valencia"
+      "63 países",
+      "42 países",
+      "78 países"
     ],
     "correcta": 0
   },
   {
-    "pregunta": "¿Cuántos continentes hay en el mundo?",
+    "pregunta": "Kyndryl Bridge es…",
     "respuestas": [
-      "5",
-      "6",
-      "7"
-    ],
-    "correcta": 2
-  },
-  {
-    "pregunta": "¿Quién pintó la Mona Lisa?",
-    "respuestas": [
-      "Leonardo da Vinci",
-      "Pablo Picasso",
-      "Vincent van Gogh"
+      "Una plataforma abierta que integra datos, IA y operaciones",
+      "Una suite de desarrollo low-code enfocada en aplicaciones móviles",
+      "Un servicio de hosting de aplicaciones web"
     ],
     "correcta": 0
   },
   {
-    "pregunta": "¿Cuál es el río más largo del mundo?",
+    "pregunta": "Uno de los pilares de Kyndryl en transformación digital es…",
     "respuestas": [
-      "Nilo",
-      "Amazonas",
-      "Yangtsé"
+      "Gestión de redes sociales",
+      "Modernización de aplicaciones",
+      "Fabricación de dispositivos IoT propios"
     ],
     "correcta": 1
   },
   {
-    "pregunta": "¿En qué año llegó el hombre a la Luna?",
+    "pregunta": "¿Cuántos empleados tiene aproximadamente Kyndryl en el mundo?",
     "respuestas": [
-      "1965",
-      "1969",
-      "1972"
-    ],
-    "correcta": 1
-  },
-  {
-    "pregunta": "¿Cuál es el elemento químico con símbolo O?",
-    "respuestas": [
-      "Oro",
-      "Oxígeno",
-      "Osmio"
-    ],
-    "correcta": 1
-  },
-  {
-    "pregunta": "¿Quién escribió 'Cien años de soledad'?",
-    "respuestas": [
-      "Gabriel García Márquez",
-      "Mario Vargas Llosa",
-      "Julio Cortázar"
+      "Más de 90,000",
+      "25,000",
+      "150,000"
     ],
     "correcta": 0
   },
   {
-    "pregunta": "¿Cuál es el país más grande del mundo?",
+    "pregunta": "¿Cuántos clientes empresariales atiende Kyndryl?",
     "respuestas": [
-      "Estados Unidos",
-      "China",
-      "Rusia"
-    ],
-    "correcta": 2
-  },
-  {
-    "pregunta": "¿Qué planeta es conocido como el planeta rojo?",
-    "respuestas": [
-      "Marte",
-      "Júpiter",
-      "Venus"
+      "Más de 4,600",
+      "Alrededor de 1,200",
+      "Casi 10,000"
     ],
     "correcta": 0
   },
   {
-    "pregunta": "¿Cuántos lados tiene un hexágono?",
+    "pregunta": "¿Con qué partners estratégicos trabaja Kyndryl?",
     "respuestas": [
-      "Cinco",
-      "Seis",
-      "Siete"
+      "AWS, Microsoft, Google Cloud",
+      "Oracle, Netflix, Meta",
+      "SAP, Spotify, Twitter"
     ],
-    "correcta": 1
+    "correcta": 0
+  },
+  {
+    "pregunta": "La misión de Kyndryl es…",
+    "respuestas": [
+      "Diseñar, construir y gestionar sistemas críticos de tecnología",
+      "Convertirse en el mayor proveedor de hardware en Latinoamérica",
+      "Ofrecer servicios de outsourcing exclusivamente en banca"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "El lema de Kyndryl es…",
+    "respuestas": [
+      "El corazón del progreso™",
+      "Innovating for a better tomorrow",
+      "Cloud first, cloud only"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "Además de servicios de infraestructura, Kyndryl ofrece…",
+    "respuestas": [
+      "Data & AI, seguridad y resiliencia, consultoría digital",
+      "Producción de microchips y sensores",
+      "Soluciones de e-commerce preconfiguradas"
+    ],
+    "correcta": 0
+  },
+  {
+    "pregunta": "¿Cómo apoya Kyndryl a las empresas en la adopción de DevOps?",
+    "respuestas": [
+      "Integrando infraestructura y desarrollo en un solo modelo de gestión",
+      "Creando una red social corporativa para desarrolladores",
+      "Fabricando servidores propios para reemplazar la nube"
+    ],
+    "correcta": 0
   }
 ]
